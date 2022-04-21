@@ -7,28 +7,100 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">    <title>Visualization Tool</title>
 </head>
 <body>
-    <h1 class = "text-center"> Systematic Review Visualization Tool </h1>
+    <script>
+    $("#toggle").on("click", function() {
+        $alert("clicked");
+    });
+        // function hideRow() {
+        //     if (document.getElementById("form-check-input1").checked == true) {
+        //         document.getElementsByClassName("rowClass").style.display = '';
+        //     }
+        // }
+        //     row = document.getElementsByClassName("rowClass")
+        //     image = document.getElementsByClassName("hello");
+        //     if (image.alt == "no") {
+        //         row.style.display = '';
+        //     }
+        // }
+
+        // const el = document.getElementById("form-check-input1");
+        // el.addEventListener("click", hideRow);
+    </script>
     <style>
-        h1 {
+        img {
+            height : 15px;
+            width : 15px;
+            border-radius: 5px;
+        }
+        .text-center {
             padding: 0.75rem;
+            border-bottom: 0;
+
+        }
+        .categories {
+        text-align: center;
+        padding: 10px 5px;
+        border-bottom: 0;
+        }
+        
+        th.rotate > div {
+            /* transform: rotate(315deg); */
+            width: 100px;
+        }
+        tbody> td > input {
+            background-color: aqua;
+            text-align: center;
+            vertical-align: middle;
         }
     </style>
+    <button type="button" id="myButton" data-loading-text="Loading..." class="btn btn-primary">
+        Loading state
+      </button>
+      
+      <script>
+        $('#myButton').on('click', function () {
+          var $btn = $(this).button('loading')
+          // business logic...
+          $btn.button('reset')
+        })
+      </script>
     <div class="container-md">
     <table class = "table">
         <col>
         <colgroup span="2"></colgroup>
         <colgroup span="2"></colgroup>
-
         <thead>
             <tr class = "categories">
-                <th scope="colgroup" colspan="2" style="align-self: center">primary concept</th>                
-                <th scope="colgroup" colspan="2" style="align-self: center">secondary concept</th>
-                <th scope="colgroup" colspan="4" style="align-self: center">trustee</th>
-                <th scope="colgroup" colspan="9" style="align-self: center">platform</th>
-                <th scope="colgroup" colspan="6" style="align-self: center">factor</th>
-                <th scope="colgroup" colspan="3" style="align-self: center">effects</th>
+                <th></th>
+                <th class = "rotate"><div><span>primary concept</span></div></th>                
+                <th class = "rotate"><div><span>secondary concept</span></div></th>
+                <th class = "rotate"><div><span>trustee: social media info</span></div></th>
+                <th class = "rotate"><div><span>trustee: info sources</span></div></th>
+                <th class = "rotate"><div><span>trustee: social media platform</span></div></th>
+                <th class = "rotate"><div><span>trustee: others</span></div></th>
+                <th class = "rotate"><div><span>platform: general</span></div></th>
+                <th class = "rotate"><div><span>platform: facebook</span></div></th>
+                <th class = "rotate"><div><span>platform: instagram</span></div></th>
+                <th class = "rotate"><div><span>platform: twitter</span></div></th>
+                <th class = "rotate"><div><span>platform: reddit</span></div></th>
+                <th class = "rotate"><div><span>trustee: whatsapp</span></div></th>
+                <th class = "rotate"><div><span>trustee: weibo</span></div></th>
+                <th class = "rotate"><div><span>trustee: wechat</span></div></th>
+                <th class = "rotate"><div><span>trustee: other</span></div></th>
+                <th class = "rotate"><div><span>factor: info attributes</span></div></th>
+                <th class = "rotate"><div><span>factor: info source attributes</span></div></th>
+                <th class = "rotate"><div><span>factor: age</span></div></th>
+                <th class = "rotate"><div><span>factor: gender</span></div></th>
+                <th class = "rotate"><div><span>factor: race</span></div></th>
+                <th class = "rotate"><div><span>factor: education</span></div></th>
+                <th class = "rotate"><div><span>factor: familiarity with sources</span></div></th>
+                <th class = "rotate"><div><span>factor: prior experience with social media</span></div></th>
+                <th class = "rotate"><div><span>factor: intention of use</span></div></th>
+                <th class = "rotate"><div><span>factor: online behaviors</span></div></th>
+                <th class = "rotate"><div><span>factor: offline behaviors</span></div></th>
+
             </tr>
-            <tr class = "subcategories">
+            <!-- <tr class = "subcategories" style="background-color:antiquewhite">
                 <th scope="col">
                     <span> trust </span>
                 </th>
@@ -97,7 +169,8 @@
                 </th>
                 <th scope="col">
                     <span> prior experience with social media </span>
-                </th> <th scope="col">
+                </th> 
+                <th scope="col">
                     <span> intention of use </span>
                 </th>
                 </th> <th scope="col">
@@ -107,55 +180,272 @@
                     <span> offline behaviors </span>
                 </th>
                 
-            </tr>
+            </tr> -->
         </thead>
-        <tbody class = "author et al. rows">
-            <tr> 
-                <td>Ayala Mojica et al.</td>
-                <td> pooo </td>
+        <tbody>
+            <tr id = "checkboxes">
+                <th>
+                </th>
+                <td>
+                    <input id="toggle" type="checkbox" value="">
+                </td>
+                <td>
+                    <input class="form-check-input2" type="checkbox" value="">
+                </td>
+                <td>
+                    <input class="form-check-input3" type="checkbox" value="">
+                </td>
+                <td>
+                    <input class="form-check-input4" type="checkbox" value="">
+                </td>
+                <td>
+                    <input class="form-check-input5" type="checkbox" value="">
+                </td>
+                <td>
+                    <input class="form-check-input6" type="checkbox" value="">
+                </td>
+                <td>
+                    <input class="form-check-input7" type="checkbox" value="">
+                </td>
+                <td>
+                    <input class="form-check-input8" type="checkbox" value="">
+                </td>
+                <td>
+                    <input class="form-check-input9" type="checkbox" value="">
+                </td>
+                <td>
+                    <input class="form-check-input10" type="checkbox" value="">
+                </td>
+                <td>
+                    <input class="form-check-input11" type="checkbox" value="">
+                </td>
+                <td>
+                    <input class="form-check-input12" type="checkbox" value="">
+                </td>
+                <td>
+                    <input class="form-check-input13" type="checkbox" value="">
+                </td>
+                <td>
+                    <input class="form-check-input14" type="checkbox" value="">
+                </td>
+                <td>
+                    <input class="form-check-input15" type="checkbox" value="">
+                </td>
+                <td>
+                    <input class="form-check-input16" type="checkbox" value="">
+                </td>
+                <td>
+                    <input class="form-check-input17" type="checkbox" value="">
+                </td>
+                <td>
+                    <input class="form-check-input18" type="checkbox" value="">
+                </td>
+                <td>
+                    <input class="form-check-input19" type="checkbox" value="">
+                </td>
+                <td>
+                    <input class="form-check-input20" type="checkbox" value="">
+                </td>
+                <td>
+                    <input class="form-check-input21" type="checkbox" value="">
+                </td>
+                <td>
+                    <input class="form-check-input22" type="checkbox" value="">
+                </td>
+                <td>
+                    <input class="form-check-input23" type="checkbox" value="">
+                </td>
+                <td>
+                    <input class="form-check-input24" type="checkbox" value="">
+                </td>
+                <td>
+                    <input class="form-check-input25" type="checkbox" value="">
+                </td>
+                <td>
+                    <input class="form-check-input26" type="checkbox" value="">
+                </td>
+            </tr>
+            <tr id = "rowClass">
+                <th class = "row-header">
+                    Busà et al.                
+                </th>
+                <td>
+                    <img class = "hello" src = "https://htmlcolorcodes.com/assets/images/colors/light-gray-color-solid-background-1920x1080.png" alt = "no" >
+                </td>
+                <td>
+                    <img src = "https://htmlcolorcodes.com/assets/images/colors/light-gray-color-solid-background-1920x1080.png" alt = "no" >
+                </td>
+                <td>
+                    <img src = "https://htmlcolorcodes.com/assets/images/colors/light-gray-color-solid-background-1920x1080.png" alt = "no" >
+                </td>
+                <td>
+                    <img src = "https://htmlcolorcodes.com/assets/images/colors/light-gray-color-solid-background-1920x1080.png" alt = "no" >
+                </td>
+                <td>
+                    <img src = "https://htmlcolorcodes.com/assets/images/colors/light-gray-color-solid-background-1920x1080.png" alt = "no" >
+                </td>
+                <td>
+                    <img src = "https://htmlcolorcodes.com/assets/images/colors/light-gray-color-solid-background-1920x1080.png" alt = "no" >
+                </td>
+                <td>
+                    <img src = "https://htmlcolorcodes.com/assets/images/colors/light-gray-color-solid-background-1920x1080.png" alt = "no" >
+                </td>
+                <td>
+                    <img src = "https://htmlcolorcodes.com/assets/images/colors/light-gray-color-solid-background-1920x1080.png" alt = "no" >
+                </td>
+                <td>
+                    <img src = "https://htmlcolorcodes.com/assets/images/colors/light-gray-color-solid-background-1920x1080.png" alt = "no" >
+                </td>
+                <td>
+                    <img src = "https://htmlcolorcodes.com/assets/images/colors/light-gray-color-solid-background-1920x1080.png" alt = "no" >
+                </td>
+                <td>
+                    <img src = "https://htmlcolorcodes.com/assets/images/colors/light-gray-color-solid-background-1920x1080.png" alt = "no" >
+                </td>
+                <td>
+                    <img src = "https://htmlcolorcodes.com/assets/images/colors/light-gray-color-solid-background-1920x1080.png" alt = "no" >
+                </td>
+                <td>
+                    <img src = "https://htmlcolorcodes.com/assets/images/colors/light-gray-color-solid-background-1920x1080.png" alt = "no" >
+                </td>
+                <td>
+                    <img src = "https://htmlcolorcodes.com/assets/images/colors/light-gray-color-solid-background-1920x1080.png" alt = "no" >
+                </td>
+                <td>
+                    <img src = "https://htmlcolorcodes.com/assets/images/colors/light-gray-color-solid-background-1920x1080.png" alt = "no" >
+                </td>
+                <td>
+                    <img src = "https://htmlcolorcodes.com/assets/images/colors/light-gray-color-solid-background-1920x1080.png" alt = "no" >
+                </td>
+                <td>
+                    <img src = "https://htmlcolorcodes.com/assets/images/colors/light-gray-color-solid-background-1920x1080.png" alt = "no" >
+                </td>
+                <td>
+                    <img src = "https://htmlcolorcodes.com/assets/images/colors/light-gray-color-solid-background-1920x1080.png" alt = "no" >
+                </td>
+                <td>
+                    <img src = "https://htmlcolorcodes.com/assets/images/colors/light-gray-color-solid-background-1920x1080.png" alt = "no" >
+                </td>
+                <td>
+                    <img src = "https://htmlcolorcodes.com/assets/images/colors/light-gray-color-solid-background-1920x1080.png" alt = "no" >
+                </td>
+                <td>
+                    <img src = "https://htmlcolorcodes.com/assets/images/colors/light-gray-color-solid-background-1920x1080.png" alt = "no" >
+                </td>
+                <td>
+                    <img src = "https://htmlcolorcodes.com/assets/images/colors/light-gray-color-solid-background-1920x1080.png" alt = "no" >
+                </td>
+                <td>
+                    <img src = "https://htmlcolorcodes.com/assets/images/colors/light-gray-color-solid-background-1920x1080.png" alt = "no" >
+                </td>
+                <td>
+                    <img src = "https://htmlcolorcodes.com/assets/images/colors/light-gray-color-solid-background-1920x1080.png" alt = "no" >
+                </td>
+                <td>
+                    <img src = "https://htmlcolorcodes.com/assets/images/colors/light-gray-color-solid-background-1920x1080.png" alt = "no" >
+                </td>
+                <td>
+                    <img src = "https://htmlcolorcodes.com/assets/images/colors/light-gray-color-solid-background-1920x1080.png" alt = "no" >
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    Surjandy et al.
+                </th>
+                <td>
+                    <img src = "https://htmlcolorcodes.com/assets/images/colors/light-gray-color-solid-background-1920x1080.png" alt = "no" >
+                </td>
+                <td>
+                    <img src = "https://htmlcolorcodes.com/assets/images/colors/light-gray-color-solid-background-1920x1080.png" alt = "no" >
+                </td>
+                <td>
+                    <img src = "https://htmlcolorcodes.com/assets/images/colors/light-gray-color-solid-background-1920x1080.png" alt = "no" >
+                </td>
+                <td>
+                    <img src = "https://htmlcolorcodes.com/assets/images/colors/light-gray-color-solid-background-1920x1080.png" alt = "no" >
+                </td>
+                <td>
+                    <img src = "https://htmlcolorcodes.com/assets/images/colors/light-gray-color-solid-background-1920x1080.png" alt = "no" >
+                </td>
+                <td>
+                    <img src = "https://htmlcolorcodes.com/assets/images/colors/light-gray-color-solid-background-1920x1080.png" alt = "no" >
+                </td>
+                <td>
+                    <img src = "https://htmlcolorcodes.com/assets/images/colors/light-gray-color-solid-background-1920x1080.png" alt = "no" >
+                </td>
+                <td>
+                    <img src = "https://htmlcolorcodes.com/assets/images/colors/light-gray-color-solid-background-1920x1080.png" alt = "no" >
+                </td>
+                <td>
+                    <img src = "https://htmlcolorcodes.com/assets/images/colors/light-gray-color-solid-background-1920x1080.png" alt = "no" >
+                </td>
+                <td>
+                    <img src = "https://htmlcolorcodes.com/assets/images/colors/light-gray-color-solid-background-1920x1080.png" alt = "no" >
+                </td>
+                <td>
+                    <img src = "https://htmlcolorcodes.com/assets/images/colors/light-gray-color-solid-background-1920x1080.png" alt = "no" >
+                </td>
+                <td>
+                    <img src = "https://htmlcolorcodes.com/assets/images/colors/light-gray-color-solid-background-1920x1080.png" alt = "no" >
+                </td>
+                <td>
+                    <img src = "https://htmlcolorcodes.com/assets/images/colors/light-gray-color-solid-background-1920x1080.png" alt = "no" >
+                </td>
+                <td>
+                    <img src = "https://htmlcolorcodes.com/assets/images/colors/light-gray-color-solid-background-1920x1080.png" alt = "no" >
+                </td>
+                <td>
+                    <img src = "https://htmlcolorcodes.com/assets/images/colors/light-gray-color-solid-background-1920x1080.png" alt = "no" >
+                </td>
+                <td>
+                    <img src = "https://htmlcolorcodes.com/assets/images/colors/light-gray-color-solid-background-1920x1080.png" alt = "no" >
+                </td>
+                <td>
+                    <img src = "https://htmlcolorcodes.com/assets/images/colors/light-gray-color-solid-background-1920x1080.png" alt = "no" >
+                </td>
+                <td>
+                    <img src = "https://htmlcolorcodes.com/assets/images/colors/light-gray-color-solid-background-1920x1080.png" alt = "no" >
+                </td>
+                <td>
+                    <img src = "https://htmlcolorcodes.com/assets/images/colors/light-gray-color-solid-background-1920x1080.png" alt = "no" >
+                </td>
+                <td>
+                    <img src = "https://htmlcolorcodes.com/assets/images/colors/light-gray-color-solid-background-1920x1080.png" alt = "no" >
+                </td>
+                <td>
+                    <img src = "https://htmlcolorcodes.com/assets/images/colors/light-gray-color-solid-background-1920x1080.png" alt = "no" >
+                </td>
+                <td>
+                    <img src = "https://htmlcolorcodes.com/assets/images/colors/light-gray-color-solid-background-1920x1080.png" alt = "no" >
+                </td>
+                <td>
+                    <img src = "https://htmlcolorcodes.com/assets/images/colors/light-gray-color-solid-background-1920x1080.png" alt = "no" >
+                </td>
+                <td>
+                    <img src = "https://htmlcolorcodes.com/assets/images/colors/light-gray-color-solid-background-1920x1080.png" alt = "no" >
+                </td>
+                <td>
+                    <img src = "https://htmlcolorcodes.com/assets/images/colors/light-gray-color-solid-background-1920x1080.png" alt = "no" >
+                </td>
+                <td>
+                    <img src = "https://htmlcolorcodes.com/assets/images/colors/light-gray-color-solid-background-1920x1080.png" alt = "no" >
+                </td>
             </tr>
         </tbody>
     </table>    
     </div>
-    <table>
-        <col>
-        <colgroup span="2"></colgroup>
-        <colgroup span="2"></colgroup>
-        <tr>
-          <td rowspan="2"></td>
-          <th colspan="2" scope="colgroup">Mars</th>
-          <th colspan="2" scope="colgroup">Venus</th>
-        </tr>
-        <tr>
-          <th scope="col">Produced</th>
-          <th scope="col">Sold</th>
-          <th scope="col">Produced</th>
-          <th scope="col">Sold</th>
-        </tr>
-        <tr>
-          <th scope="row">Teddy Bears</th>
-          <td>50,000</td>
-          <td>30,000</td>
-          <td>100,000</td>
-          <td>80,000</td>
-        </tr>
-        <tr>
-          <th scope="row">Board Games</th>
-          <td>10,000</td>
-          <td>5,000</td>
-          <td>12,000</td>
-          <td>9,000</td>
-        </tr>
-      </table>
-      <style>
-          .tr {
-            text-align: center;
-            padding: 10px 5px;
-            border: 1px solid rgb(185, 43, 43);
-          }
-      </style>
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <script src=”https://code.jquery.com/jquery-3.2.1.slim.min.js” integrity=”sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN” crossorigin=”anonymous”></script>
+
+<script src=https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js integrity=”sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q” crossorigin=”anonymous”></script>
+
+<script src=”https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js” integrity=”sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl” crossorigin=”anonymous”></script>
+<script type="javascript" src = "js/bootstrap.min.js">
 </body>
 </html>
+<!-- javascript plans
+- the checkboxes for every paper should be images with alt = "yes" or "no" in case the pic doesnt come up
+- make a function that does querySelect(*a certain checkbox*) and then for loop for each tr, if statement for whether the alt is yes or no? then
+ .hide(tr) 
+ https://stackoverflow.com/questions/26512386/remove-current-row-tr-when-checkbox-is-checked to remove row
+ https://stackoverflow.com/questions/38274001/if-condition-inside-foreachs-anonymous-function-does-not-work if condition inside for loop
+-->
